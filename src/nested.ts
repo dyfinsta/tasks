@@ -28,7 +28,7 @@ export function findQuestion(
     questions: Question[],
     id: number,
 ): Question | null {
-    return null;
+    return questions.find((q) => q.id === id) || null;
 }
 
 /**
