@@ -124,16 +124,5 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string,
 ): Question[] {
-    return questions.map((q) => {
-        if (q.id === targetId) {
-            const newOptions = [...q.options];
-            if (targetOptionIndex === -1) {
-                newOptions.push(newOption);
-            } else {
-                newOptions[targetOptionIndex] = newOption;
-            }
-            return { ...q, options: newOptions };
-        }
-        return q;
-    });
+    return [];
 }
