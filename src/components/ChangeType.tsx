@@ -1,7 +1,19 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { QuestionType } from "../interfaces/question";
 
 export function ChangeType(): React.JSX.Element {
-    return <div>Change Type</div>;
+    const [type, setType] = useState("Short Answer");
+
+    const toggleType = () => {
+        setType((prevType) =>
+            prevType === "Short Answer" ? "Multiple Choice" : "Short Answer",
+        );
+    };
+
+    return (
+        <div>
+            <p>{type}</p>
+            <Button onClick={toggleType}>Change Type</Button>
+        </div>
+    );
 }
